@@ -45,7 +45,7 @@
   },
   "schedule": [
     { "time": "15:00", "event": "Lễ gia tiên", "note": "Tại tư gia" },
-    { "time": "17:00", "event": "Đón khách",   "note": "Chào mừng quý khách" },
+    { "time": "17:00", "event": "Đón khách",   "note": "Sảnh Queen 3, tầng 02" },
     { "time": "18:00", "event": "Khai tiệc",   "note": "Bắt đầu tiệc cưới" }
   ]
 }

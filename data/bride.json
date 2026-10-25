@@ -45,7 +45,7 @@
   },
   "schedule": [
     { "time": "09:00", "event": "Lễ hôn phối", "note": "Giáo Xứ Thới Hòa" },
-    { "time": "10:30", "event": "Đón khách",   "note": "Chào mừng quý khách" },
+    { "time": "10:30", "event": "Đón khách",   "note": "Nhà hàng tiệc cưới" },
     { "time": "11:30", "event": "Khai tiệc",   "note": "Bắt đầu tiệc cưới" }
   ]
 }
