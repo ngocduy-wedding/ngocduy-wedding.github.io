@@ -1,0 +1,51 @@
+{
+  "side": "groom",
+  "initialsHtml": "D <span class=\"amp\">&amp;</span> N",
+  "giftboxTag": "D & N",
+  "names": {
+    "first": "Tường Duy",
+    "firstNbsp": "Tường&nbsp;Duy",
+    "second": "Như Ngọc",
+    "secondNbsp": "Như&nbsp;Ngọc"
+  },
+  "pageTitle": "Duy & Ngọc | Wedding Invitation",
+  "siteName": "Duy & Ngọc — Wedding",
+  "ogTitle": "Tường Duy & Như Ngọc · 29.11.2026",
+  "ogImageAlt": "Thiệp cưới Tường Duy & Như Ngọc — 29 tháng 11, 2026",
+  "description": "Trân trọng kính mời thân bằng quyến thuộc đến chung vui trong ngày trọng đại của chúng mình.",
+  "date": {
+    "iso": "2026-11-29T18:00:00+07:00",
+    "day": "29",
+    "dayDotMonth": "29 · 11",
+    "fullDotted": "29 · 11 · 2026",
+    "monthShort": "Tháng 11",
+    "monthLong": "Tháng Mười Một",
+    "year": "2026",
+    "dayOfWeek": "Chủ Nhật",
+    "time": "18:00"
+  },
+  "venue": {
+    "tag": "Tiệc cưới",
+    "nameHtml": "Queen Plaza<br/><em>Tân Bình</em>",
+    "namePlain": "Queen Plaza Tân Bình",
+    "nameModifier": "",
+    "addressHtml": "91B2 Phạm Văn Hai, P. Tân Sơn Hòa,<br/>TP. Hồ Chí Minh",
+    "addressPlain": "91B2 Phạm Văn Hai, P. Tân Sơn Hòa, TP. Hồ Chí Minh",
+    "mapsUrl": "https://maps.app.goo.gl/ytBXpzy8v4EaYTEY6",
+    "mapEmbed": "https://maps.google.com/maps?q=Queen+Plaza+T%C3%A2n+B%C3%ACnh+91B2+Ph%E1%BA%A1m+V%C4%83n+Hai&z=17&hl=vi&output=embed",
+    "mapTitle": "Bản đồ Queen Plaza Tân Bình",
+    "mapAria": "Mở Google Maps đến Queen Plaza Tân Bình"
+  },
+  "calendar": {
+    "title": "Tiệc cưới Tường Duy ❤ Như Ngọc",
+    "startUtc": "20261129T110000Z",
+    "endUtc":   "20261129T140000Z",
+    "details":  "Trân trọng kính mời quý khách đến chung vui trong ngày cưới của Tường Duy & Như Ngọc.",
+    "location": "Queen Plaza Tân Bình, 91B2 Phạm Văn Hai, Tân Sơn Hòa, Hồ Chí Minh"
+  },
+  "schedule": [
+    { "time": "15:00", "event": "Lễ gia tiên", "note": "Tại tư gia" },
+    { "time": "17:00", "event": "Đón khách",   "note": "Chào mừng quý khách" },
+    { "time": "18:00", "event": "Khai tiệc",   "note": "Bắt đầu tiệc cưới" }
+  ]
+}

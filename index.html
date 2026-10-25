@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#8B9D83" />
+  <title data-f="pageTitle">Duy & Ngọc | Wedding Invitation</title>
+  <meta name="description" content="Trân trọng kính mời thân bằng quyến thuộc đến chung vui trong ngày trọng đại của chúng mình." data-fa="content:description" />
+
+  <!-- Open Graph / Social share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Duy & Ngọc — Wedding" data-fa="content:siteName" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Tường Duy & Như Ngọc · 29.11.2026" data-fa="content:ogTitle" />
+  <meta property="og:description" content="Trân trọng kính mời thân bằng quyến thuộc đến chung vui trong ngày trọng đại của chúng mình." data-fa="content:description" />
+  <meta property="og:image" content="assets/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Thiệp cưới Tường Duy & Như Ngọc — 29 tháng 11, 2026" data-fa="content:ogImageAlt" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tường Duy & Như Ngọc · 29.11.2026" data-fa="content:ogTitle" />
+  <meta name="twitter:description" content="Trân trọng kính mời thân bằng quyến thuộc đến chung vui trong ngày trọng đại của chúng mình." data-fa="content:description" />
+  <meta name="twitter:image" content="assets/images/og-cover.jpg" />
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/images/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Olive branch defs (reused by footer decorations) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="olive-leaf">
+        <path d="M0 0C6-4.2 15-4.6 24 0C15 4.6 6 4.2 0 0Z"/>
+        <path class="ol-vein" d="M2 0H21"/>
+      </g>
+      <g id="olive-branch">
+        <path class="ol-stem" d="M16 18C60 26 115 22 176 12"/>
+        <use href="#olive-leaf" class="ol-leaf ol-alt" transform="translate(26.8 19.7) rotate(-30.4) scale(1.11)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(41.9 21.3) rotate(42.4) scale(1.05)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(57.7 22.1) rotate(-36.3) scale(0.99)"/>
+        <use href="#olive-leaf" class="ol-leaf ol-alt" transform="translate(74.2 22.2) rotate(37.2) scale(0.93)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(91.2 21.7) rotate(-40.8) scale(0.87)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(108.9 20.5) rotate(33.3) scale(0.81)"/>
+        <use href="#olive-leaf" class="ol-leaf ol-alt" transform="translate(127.1 18.8) rotate(-44.2) scale(0.75)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(145.9 16.5) rotate(30.4) scale(0.69)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(165.1 13.7) rotate(-46.7) scale(0.63)"/>
+        <use href="#olive-leaf" class="ol-leaf" transform="translate(176 12) rotate(-9.3) scale(.55)"/>
+        <ellipse class="ol-olive" cx="58.4" cy="28.1" rx="3.6" ry="4.6" transform="rotate(22 58.4 28.1)"/>
+        <ellipse class="ol-olive" cx="67.6" cy="31.3" rx="3.6" ry="4.6" transform="rotate(20 67.6 31.3)"/>
+        <ellipse class="ol-olive" cx="109.3" cy="13.5" rx="3.6" ry="4.6" transform="rotate(15 109.3 13.5)"/>
+      </g>
+      <g id="cover-blossom" fill="currentColor">
+        <ellipse cx="16" cy="7"    rx="4.2" ry="5.6" transform="rotate(0 16 7)"/>
+        <ellipse cx="23.5" cy="11" rx="4.2" ry="5.6" transform="rotate(60 23.5 11)"/>
+        <ellipse cx="23.5" cy="19" rx="4.2" ry="5.6" transform="rotate(120 23.5 19)"/>
+        <ellipse cx="16" cy="23"   rx="4.2" ry="5.6" transform="rotate(180 16 23)"/>
+        <ellipse cx="8.5"  cy="19" rx="4.2" ry="5.6" transform="rotate(240 8.5 19)"/>
+        <ellipse cx="8.5"  cy="11" rx="4.2" ry="5.6" transform="rotate(300 8.5 11)"/>
+        <circle cx="16" cy="15" r="2.6" fill="#e5b47a"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <svg class="loader-leaf" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 5C30 5 12 15 12 32C12 45 20 55 30 55C40 55 48 45 48 32C48 15 30 5 30 5Z" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M30 10V55M30 22L22 28M30 32L22 38M30 22L38 28M30 32L38 38" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <p data-fh="initialsHtml">D <span class="amp">&amp;</span> N</p>
+    </div>
+  </div>
+
+  <!-- Cover letter -->
+  <section class="cover" id="cover" aria-label="Thiệp mời">
+    <div class="cover-bg" aria-hidden="true">
+      <svg class="cover-decor cover-decor-tl" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+      <svg class="cover-decor cover-decor-tr" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+      <svg class="cover-decor cover-decor-bl" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+      <svg class="cover-decor cover-decor-br" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+      <svg class="cover-blossom cover-blossom-1" viewBox="0 0 32 30" aria-hidden="true"><use href="#cover-blossom"/></svg>
+      <svg class="cover-blossom cover-blossom-2" viewBox="0 0 32 30" aria-hidden="true"><use href="#cover-blossom"/></svg>
+      <svg class="cover-blossom cover-blossom-3" viewBox="0 0 32 30" aria-hidden="true"><use href="#cover-blossom"/></svg>
+      <svg class="cover-blossom cover-blossom-4" viewBox="0 0 32 30" aria-hidden="true"><use href="#cover-blossom"/></svg>
+      <svg class="cover-blossom cover-blossom-5" viewBox="0 0 32 30" aria-hidden="true"><use href="#cover-blossom"/></svg>
+    </div>
+    <div class="cover-hearts" aria-hidden="true">
+      <span class="ch ch-1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+      <span class="ch ch-2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+      <span class="ch ch-3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+      <span class="ch ch-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+      <span class="ch ch-5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+    </div>
+    <div class="cover-petals" aria-hidden="true">
+      <span class="cp cp-1"></span>
+      <span class="cp cp-2"></span>
+      <span class="cp cp-3"></span>
+      <span class="cp cp-4"></span>
+      <span class="cp cp-5"></span>
+      <span class="cp cp-6"></span>
+      <span class="cp cp-7"></span>
+      <span class="cp cp-8"></span>
+      <span class="cp cp-9"></span>
+      <span class="cp cp-10"></span>
+      <span class="cp cp-11"></span>
+      <span class="cp cp-12"></span>
+      <span class="cp cp-13"></span>
+      <span class="cp cp-14"></span>
+    </div>
+
+    <article class="cover-card">
+      <div class="cover-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+      </div>
+
+      <svg class="cover-sprig cover-sprig-left" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+      <svg class="cover-sprig cover-sprig-right" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+
+      <p class="cover-eyebrow">— Thiệp mời cưới —</p>
+
+      <h1 class="cover-names">
+        <span class="cover-name" data-fh="names.firstNbsp">Tường&nbsp;Duy</span>
+        <span class="cover-amp">&amp;</span>
+        <span class="cover-name" data-fh="names.secondNbsp">Như&nbsp;Ngọc</span>
+      </h1>
+
+      <svg class="cover-divider" viewBox="0 0 120 20" aria-hidden="true">
+        <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+        <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+        <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+      </svg>
+
+      <p class="cover-date">
+        <span data-f="date.dayOfWeek">Chủ Nhật</span>
+        <span class="cover-date-sep" aria-hidden="true">·</span>
+        <span data-f="date.fullDotted">29 · 11 · 2026</span>
+      </p>
+
+      <p class="cover-greeting">Thân mời bạn đến chung vui<br/>trong ngày trọng đại của chúng mình</p>
+
+      <button type="button" class="cover-open" id="coverOpen" aria-label="Mở thiệp cưới">
+        <span class="cover-open-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7l8 6 8-6"/>
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+          </svg>
+        </span>
+        <span>Mở thiệp</span>
+        <svg class="cover-open-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+
+      <p class="cover-hint">Chạm để mở thiệp</p>
+    </article>
+  </section>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-brand">
+      <span class="brand-ampersand" data-fh="initialsHtml">D <span class="amp">&amp;</span> N</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#story">Chuyện tình</a></li>
+      <li><a href="#couple">Dâu rể</a></li>
+      <li><a href="#events">Sự kiện</a></li>
+      <li><a href="#gallery">Khoảnh khắc</a></li>
+      <li><a href="#rsvp">Xác nhận</a></li>
+      <li><a href="#wishes">Lời chúc</a></li>
+      <li><a href="#gift">Mừng cưới</a></li>
+    </ul>
+  </nav>
+
+  <!-- Music toggle -->
+  <button class="music-toggle playing" id="musicToggle" type="button" aria-label="Tạm dừng nhạc">
+    <span class="music-disc" aria-hidden="true"></span>
+    <span class="music-ring" aria-hidden="true"></span>
+    <span class="music-gloss" aria-hidden="true"></span>
+    <span class="music-content">
+      <svg class="music-note" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <span class="music-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </span>
+  </button>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Decorative leaves -->
+    <svg class="leaf leaf-top-left" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <path d="M20 20 Q 80 40, 100 100 T 180 180" stroke="currentColor" stroke-width="1"/>
+      <ellipse cx="40" cy="50" rx="18" ry="7" transform="rotate(30 40 50)" fill="currentColor" opacity=".3"/>
+      <ellipse cx="70" cy="80" rx="20" ry="8" transform="rotate(40 70 80)" fill="currentColor" opacity=".4"/>
+      <ellipse cx="100" cy="110" rx="22" ry="9" transform="rotate(50 100 110)" fill="currentColor" opacity=".5"/>
+      <ellipse cx="130" cy="140" rx="20" ry="8" transform="rotate(60 130 140)" fill="currentColor" opacity=".4"/>
+    </svg>
+    <svg class="leaf leaf-bottom-right" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <path d="M180 180 Q 120 160, 100 100 T 20 20" stroke="currentColor" stroke-width="1"/>
+      <ellipse cx="160" cy="150" rx="18" ry="7" transform="rotate(30 160 150)" fill="currentColor" opacity=".3"/>
+      <ellipse cx="130" cy="120" rx="20" ry="8" transform="rotate(40 130 120)" fill="currentColor" opacity=".4"/>
+      <ellipse cx="100" cy="90" rx="22" ry="9" transform="rotate(50 100 90)" fill="currentColor" opacity=".5"/>
+      <ellipse cx="70" cy="60" rx="20" ry="8" transform="rotate(60 70 60)" fill="currentColor" opacity=".4"/>
+    </svg>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow fade-up">— Save the date —</p>
+      <h1 class="hero-title">
+        <span class="hero-name fade-up" style="--d:.1s" data-fh="names.firstNbsp">Tường&nbsp;Duy</span>
+        <span class="hero-amp fade-up" style="--d:.2s">&amp;</span>
+        <span class="hero-name fade-up" style="--d:.3s" data-fh="names.secondNbsp">Như&nbsp;Ngọc</span>
+      </h1>
+      <div class="hero-date fade-up" style="--d:.4s">
+        <span class="date-side">
+          <span class="date-day" data-f="date.dayOfWeek">Chủ Nhật</span>
+          <span class="date-month" data-f="date.monthShort">Tháng 11</span>
+        </span>
+        <span class="date-big" data-f="date.day">29</span>
+        <span class="date-side">
+          <span class="date-day" data-f="date.year">2026</span>
+          <span class="date-month" data-f="date.time">18:00</span>
+        </span>
+      </div>
+      <p class="hero-sub fade-up" style="--d:.5s">
+        Trân trọng kính mời quý thân bằng quyến thuộc <br/>
+        đến chung vui trong ngày trọng đại của chúng mình.
+      </p>
+      <a href="#story" class="hero-cta fade-up" style="--d:.6s">
+        <span>Khám phá câu chuyện</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+
+    <a href="#countdown" class="scroll-indicator" aria-label="Cuộn xuống">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section" id="countdown">
+    <div class="container narrow">
+      <p class="eyebrow">— Đếm ngược đến ngày hạnh phúc —</p>
+      <h2 class="section-title">Chỉ còn</h2>
+      <div class="countdown" id="countdownTimer">
+        <div class="count-item"><span class="count-num" data-d>00</span><span class="count-label">Ngày</span></div>
+        <div class="count-item"><span class="count-num" data-h>00</span><span class="count-label">Giờ</span></div>
+        <div class="count-item"><span class="count-num" data-m>00</span><span class="count-label">Phút</span></div>
+        <div class="count-item"><span class="count-num" data-s>00</span><span class="count-label">Giây</span></div>
+      </div>
+      <p class="countdown-note">… cho đến khi hai trái tim trở thành một.</p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">— Câu chuyện của chúng mình —</p>
+        <h2 class="section-title">Hành trình yêu thương</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-media"></div>
+          <div class="timeline-text">
+            <span class="timeline-date">Mùa thu · 2019</span>
+            <h3>Lần đầu gặp gỡ</h3>
+            <p>Một buổi chiều Hà Nội se lạnh, chúng mình tình cờ gặp nhau trong buổi tiệc sinh nhật của một người bạn chung. Một ánh nhìn, một nụ cười — và tất cả bắt đầu từ đó.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reverse reveal">
+          <div class="timeline-media alt"></div>
+          <div class="timeline-text">
+            <span class="timeline-date">Mùa đông · 2020</span>
+            <h3>Hẹn hò đầu tiên</h3>
+            <p>Một cốc cà phê nóng, những câu chuyện kể suốt đêm, và cảm giác như đã quen nhau từ rất lâu. Đó là buổi hẹn mà cả hai sẽ không bao giờ quên.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-media third"></div>
+          <div class="timeline-text">
+            <span class="timeline-date">Mùa xuân · 2024</span>
+            <h3>Lời cầu hôn</h3>
+            <p>Dưới ánh hoàng hôn bên bờ biển Đà Nẵng, anh đã quỳ gối và trao em chiếc nhẫn. "Em có đồng ý cùng anh đi đến cuối cuộc đời không?" — Và em đã nói "Có".</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reverse reveal">
+          <div class="timeline-media fourth"></div>
+          <div class="timeline-text">
+            <span class="timeline-date">Mùa đông · 2026</span>
+            <h3>Về chung một nhà</h3>
+            <p>Chúng mình chính thức bước vào chương mới của cuộc đời. Trân trọng mời bạn cùng chia sẻ niềm hạnh phúc này.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPLE -->
+  <section class="couple" id="couple">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">— Dâu &amp; Rể —</p>
+        <h2 class="section-title">Hai nửa yêu thương</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="couple-grid" id="coupleGrid">
+        <div class="person reveal">
+          <div class="person-photo groom-photo"></div>
+          <p class="person-role">Chú rể</p>
+          <h3 class="person-name">Võ Tường Duy</h3>
+          <p class="person-bio">"Em là món quà quý giá nhất mà cuộc đời đã dành cho anh. Anh hứa sẽ yêu thương, chăm sóc và cùng em viết tiếp những trang đẹp nhất."</p>
+        </div>
+
+        <div class="couple-heart" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none">
+            <path d="M30 50s-18-10-18-25a9 9 0 0118-3 9 9 0 0118 3c0 15-18 25-18 25z" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </div>
+
+        <div class="person reveal" style="--d:.2s">
+          <div class="person-photo bride-photo"></div>
+          <p class="person-role">Cô dâu</p>
+          <h3 class="person-name">Nguyễn Thị Như Ngọc</h3>
+          <p class="person-bio">"Anh là bến đỗ bình yên nhất của em. Cảm ơn anh đã đến, đã kiên nhẫn và yêu em bằng cách của riêng mình."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-head light">
+        <p class="eyebrow">— Sự kiện —</p>
+        <h2 class="section-title">Lễ cưới của chúng mình</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="calendar-wrap reveal">
+        <div class="calendar">
+          <div class="calendar-head">
+            <span class="cal-month" data-f="date.monthLong">Tháng Mười Một</span>
+            <span class="cal-year" data-f="date.year">2026</span>
+          </div>
+          <div class="calendar-grid">
+            <div class="cal-dow">CN</div>
+            <div class="cal-dow">T2</div>
+            <div class="cal-dow">T3</div>
+            <div class="cal-dow">T4</div>
+            <div class="cal-dow">T5</div>
+            <div class="cal-dow">T6</div>
+            <div class="cal-dow">T7</div>
+
+            <div class="cal-day">1</div>
+            <div class="cal-day">2</div>
+            <div class="cal-day">3</div>
+            <div class="cal-day">4</div>
+            <div class="cal-day">5</div>
+            <div class="cal-day">6</div>
+            <div class="cal-day">7</div>
+
+            <div class="cal-day">8</div>
+            <div class="cal-day">9</div>
+            <div class="cal-day">10</div>
+            <div class="cal-day">11</div>
+            <div class="cal-day">12</div>
+            <div class="cal-day">13</div>
+            <div class="cal-day">14</div>
+
+            <div class="cal-day">15</div>
+            <div class="cal-day">16</div>
+            <div class="cal-day">17</div>
+            <div class="cal-day">18</div>
+            <div class="cal-day">19</div>
+            <div class="cal-day">20</div>
+            <div class="cal-day">21</div>
+
+            <div class="cal-day">22</div>
+            <div class="cal-day">23</div>
+            <div class="cal-day">24</div>
+            <div class="cal-day">25</div>
+            <div class="cal-day">26</div>
+            <div class="cal-day">27</div>
+            <div class="cal-day">28</div>
+
+            <div class="cal-day active" aria-label="Ngày cưới 29 tháng 11 năm 2026">
+              <span class="cal-heart" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+              </span>
+              <span>29</span>
+            </div>
+            <div class="cal-day">30</div>
+          </div>
+          <p class="cal-note">— Ngày hạnh phúc của chúng mình —</p>
+
+          <a class="cal-btn" id="addToCalendar" href="#" target="_blank" rel="noopener">Thêm vào lịch</a>
+        </div>
+      </div>
+
+      <div class="schedule reveal">
+        <div class="schedule-head">
+          <p class="schedule-eyebrow">— Trình tự ngày cưới —</p>
+          <h3 class="schedule-title">Lịch trình trong ngày</h3>
+        </div>
+
+        <div class="schedule-grid">
+          <div class="schedule-col" id="scheduleCol">
+            <ol class="sch-timeline" id="schTimeline"></ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="restaurant-event reveal">
+        <div class="restaurant-info">
+          <p class="restaurant-tag">— <span data-f="venue.tag">Tiệc cưới</span> —</p>
+          <h3 class="restaurant-name" id="restaurantName" data-fh="venue.nameHtml">Queen Plaza<br/><em>Tân Bình</em></h3>
+
+          <div class="restaurant-when">
+            <div class="rwhen-col">
+              <span class="rwhen-label">Thời gian</span>
+              <strong class="rwhen-value" data-f="date.time">18:00</strong>
+              <span class="rwhen-sub" data-f="date.dayOfWeek">Chủ Nhật</span>
+            </div>
+            <div class="rwhen-sep" aria-hidden="true"></div>
+            <div class="rwhen-col">
+              <span class="rwhen-label">Ngày</span>
+              <strong class="rwhen-value" data-f="date.dayDotMonth">29 · 11</strong>
+              <span class="rwhen-sub" data-f="date.year">2026</span>
+            </div>
+          </div>
+
+          <p class="restaurant-address">
+            <svg class="addr-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 22s-7-7-7-13a7 7 0 1114 0c0 6-7 13-7 13z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <span data-fh="venue.addressHtml">91B2 Phạm Văn Hai, P. Tân Sơn Hòa,<br/>TP. Hồ Chí Minh</span>
+          </p>
+
+          <a class="restaurant-direction" href="https://maps.app.goo.gl/ytBXpzy8v4EaYTEY6" target="_blank" rel="noopener" data-fa="href:venue.mapsUrl">Chỉ đường bằng Google Maps →</a>
+        </div>
+
+        <div class="restaurant-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Queen+Plaza+T%C3%A2n+B%C3%ACnh+91B2+Ph%E1%BA%A1m+V%C4%83n+Hai&z=17&hl=vi&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bản đồ Queen Plaza Tân Bình"
+            data-fa="src:venue.mapEmbed|title:venue.mapTitle"></iframe>
+          <a class="map-overlay-link"
+             href="https://maps.app.goo.gl/ytBXpzy8v4EaYTEY6"
+             target="_blank" rel="noopener"
+             aria-label="Mở Google Maps đến Queen Plaza Tân Bình"
+             data-fa="href:venue.mapsUrl|aria-label:venue.mapAria">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 22s-7-7-7-13a7 7 0 1114 0c0 6-7 13-7 13z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+              <span data-f="venue.namePlain">Queen Plaza Tân Bình</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">— Khoảnh khắc —</p>
+        <h2 class="section-title">Bộ ảnh cưới</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="g-item g1 reveal"></div>
+        <div class="g-item g2 reveal" style="--d:.05s"></div>
+        <div class="g-item g3 reveal" style="--d:.1s"></div>
+        <div class="g-item g4 reveal" style="--d:.15s"></div>
+        <div class="g-item g5 reveal" style="--d:.2s"></div>
+        <div class="g-item g6 reveal" style="--d:.25s"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="container narrow">
+      <svg class="quote-mark" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+        <path d="M15 40c0-10 5-18 15-20M35 40c0-10 5-18 15-20"/>
+      </svg>
+      <p class="quote-text">
+        Yêu nhau không phải là nhìn nhau,<br/>
+        mà là cùng nhau nhìn về một hướng.
+      </p>
+      <p class="quote-author">— Antoine de Saint-Exupéry —</p>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <div class="container narrow">
+      <div class="section-head">
+        <p class="eyebrow">— Xác nhận tham dự —</p>
+        <h2 class="section-title">Chúng mình mong gặp bạn</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <p class="section-sub">Vui lòng xác nhận trước ngày <b>15/11/2026</b> để chúng mình tiện chuẩn bị thật chu đáo nhé.</p>
+      </div>
+
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <div class="form-row">
+          <label>
+            <span>Họ và tên <em>*</em></span>
+            <input type="text" name="name" required placeholder="Nguyễn Văn A" />
+          </label>
+          <label>
+            <span>Số điện thoại</span>
+            <input type="tel" name="phone" placeholder="09xx xxx xxx" />
+          </label>
+        </div>
+
+        <label>
+          <span>Bạn sẽ tham dự chứ? <em>*</em></span>
+          <div class="radio-group">
+            <input type="radio" id="attend-yes" name="attend" value="yes" required />
+            <label for="attend-yes">Chắc chắn có mặt 🤍</label>
+            <input type="radio" id="attend-no" name="attend" value="no" />
+            <label for="attend-no">Tiếc là không thể</label>
+          </div>
+        </label>
+
+        <!-- <div class="form-row">
+          <label>
+            <span>Số người tham dự</span>
+            <select name="guests">
+              <option>1 người</option>
+              <option>2 người</option>
+              <option>3 người</option>
+              <option>4 người trở lên</option>
+            </select>
+          </label>
+          <label>
+            <span>Dự sự kiện nào?</span>
+            <select name="event">
+              <option>Lễ cưới &amp; Tiệc tối</option>
+              <option>Chỉ dự lễ cưới</option>
+              <option>Chỉ dự tiệc tối</option>
+            </select>
+          </label>
+        </div> -->
+
+        <label>
+          <span>Lời chúc gửi đến cô dâu chú rể</span>
+          <textarea id="wishInput" name="wish" rows="4" maxlength="500" placeholder="Chúc hai bạn trăm năm hạnh phúc…"></textarea>
+          <small class="wish-counter" id="wishCounter" aria-live="polite">0 / 500</small>
+        </label>
+
+        <button type="submit" class="btn-submit" id="rsvpSubmit">
+          <span class="btn-icon btn-icon-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+          <span class="btn-icon btn-icon-spinner" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9" opacity=".25"/>
+              <path d="M21 12a9 9 0 0 0-9-9" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="btn-icon btn-icon-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          </span>
+          <span class="btn-label" data-default="Gửi lời chúc" data-loading="Đang gửi…" data-success="Đã gửi">Gửi lời chúc</span>
+        </button>
+
+        <p class="form-success" id="formSuccess" aria-live="polite">
+          Cảm ơn bạn đã xác nhận! Chúng mình sẽ dành chỗ đẹp nhất cho bạn 🤍
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- WISHES -->
+  <section class="wishes" id="wishes">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">— Lời chúc —</p>
+        <h2 class="section-title">Những lời yêu thương</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <p class="section-sub">Những lời chúc thân thương từ bạn bè và người thân sẽ được lưu giữ ở đây.</p>
+        <p class="wishes-count" id="wishesCount" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="wishes-wall" id="wishesWall" aria-live="polite" aria-busy="true"></div>
+
+      <div class="wishes-actions">
+        <button type="button" class="wishes-more" id="wishesMore" hidden>Xem thêm lời chúc</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section class="gift" id="gift">
+    <div class="container narrow">
+      <div class="section-head light">
+        <p class="eyebrow">— Mừng cưới —</p>
+        <h2 class="section-title">Hộp quà cưới</h2>
+        <svg class="divider" viewBox="0 0 120 20" aria-hidden="true">
+          <path d="M0 10 H45" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="10" r="3" stroke="currentColor" fill="none"/>
+          <path d="M75 10 H120" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <p class="section-sub">Sự hiện diện của bạn chính là món quà quý giá nhất.</p>
+      </div>
+
+      <button class="giftbox" id="giftbox" type="button" aria-label="Mở hộp quà" aria-haspopup="dialog">
+        <div class="giftbox-inner">
+          <div class="giftbox-rays"></div>
+          <div class="giftbox-glow"></div>
+          <div class="giftbox-card"></div>
+          <div class="giftbox-shadow"></div>
+          <div class="giftbox-body"><span class="giftbox-strap"></span><span class="giftbox-tag" data-f="giftboxTag">D & N</span></div>
+          <div class="giftbox-lid">
+            <span class="giftbox-strap"></span>
+            <svg class="giftbox-bow" viewBox="0 0 124 78" aria-hidden="true">
+              <path d="M60 46 C42 16 8 12 12 34 C15 52 42 54 60 46Z" fill="#c99a9a"/>
+              <path d="M64 46 C82 16 116 12 112 34 C109 52 82 54 64 46Z" fill="#c99a9a"/>
+              <path d="M56 44 C42 26 22 24 22 34 C23 44 42 46 56 44Z" fill="#b07f80" opacity=".55"/>
+              <path d="M68 44 C82 26 102 24 102 34 C101 44 82 46 68 44Z" fill="#b07f80" opacity=".55"/>
+              <path d="M28 22 C36 18 46 22 52 30" fill="none" stroke="#e4c4c4" stroke-width="2" stroke-linecap="round"/>
+              <path d="M96 22 C88 18 78 22 72 30" fill="none" stroke="#e4c4c4" stroke-width="2" stroke-linecap="round"/>
+              <path d="M57 50 L40 74 L47 72 L50 78 L62 52Z" fill="#b98a8a"/>
+              <path d="M67 50 L84 74 L77 72 L74 78 L62 52Z" fill="#b98a8a"/>
+              <rect x="53" y="38" width="18" height="16" rx="6" fill="#b98a8a"/>
+              <rect x="57" y="41" width="6" height="4" rx="2" fill="#dcb6b6" opacity=".8"/>
+            </svg>
+          </div>
+          <span class="giftbox-sparkle giftbox-s1"><svg viewBox="0 0 12 12"><path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="currentColor"/></svg></span>
+          <span class="giftbox-sparkle giftbox-s2"><svg viewBox="0 0 12 12"><path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="currentColor"/></svg></span>
+          <span class="giftbox-sparkle giftbox-s3"><svg viewBox="0 0 12 12"><path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="currentColor"/></svg></span>
+          <span class="giftbox-sparkle giftbox-s4"><svg viewBox="0 0 12 12"><path d="M6 0L7.2 4.8L12 6L7.2 7.2L6 12L4.8 7.2L0 6L4.8 4.8Z" fill="currentColor"/></svg></span>
+        </div>
+        <div class="giftbox-confetti" id="giftboxConfetti"></div>
+      </button>
+      <span class="giftbox-hint">Nhấn để mở hộp quà</span>
+
+      <!-- Gift modal -->
+      <dialog class="gift-modal" id="giftModal" aria-labelledby="giftModalTitle">
+        <button type="button" class="gift-modal-close" aria-label="Đóng" data-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+
+        <p class="gift-modal-eyebrow">— Mừng cưới —</p>
+        <h3 id="giftModalTitle" class="gift-modal-title">Gửi đến cô dâu & chú rễ</h3>
+
+        <div class="gift-grid" id="giftContents">
+            <div class="gift-card">
+              <div class="gift-ribbon">Chú rể</div>
+              <div class="qr-image qr-image--card">
+                <img src="assets/images/qr-duy.png" alt="Mã QR chuyển khoản Vietcombank — Võ Tường Duy" loading="lazy" />
+              </div>
+              <h3>Võ Tường Duy</h3>
+              <p class="bank-name">Vietcombank</p>
+              <b class="copyable account" data-copy="9397974403">9397974403 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg></b>
+            </div>
+
+            <div class="gift-card">
+              <div class="gift-ribbon">Cô dâu</div>
+              <div class="qr-image qr-image--card">
+                <img src="assets/images/qr-ngoc.png" alt="Mã QR chuyển khoản Vietcombank — Nguyễn Thị Như Ngọc" loading="lazy" />
+              </div>
+              <h3>Nguyễn Thị Như Ngọc</h3>
+              <p class="bank-name">Vietcombank</p>
+              <b class="copyable account" data-copy="0721000667498">0721000667498 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg></b>
+            </div>
+          </div>
+          <p class="thanks">Cảm ơn tấm lòng của bạn</p>
+        </dialog>
+    </div>
+  </section>
+
+  <!-- WISHES / FOOTER -->
+  <footer class="footer">
+    <svg class="ol-sprig ol-tl" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+    <svg class="ol-sprig ol-br" viewBox="0 0 190 50" aria-hidden="true"><use href="#olive-branch"/></svg>
+    <div class="footer-decor" aria-hidden="true">
+      <svg viewBox="0 0 400 100" fill="none">
+        <path d="M0 50 Q 100 20, 200 50 T 400 50" stroke="currentColor" stroke-width="1"/>
+        <circle cx="200" cy="50" r="4" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <div class="container narrow footer-content">
+      <h2 class="footer-title">Cảm ơn bạn</h2>
+      <p class="footer-sub">
+        … đã dành thời gian cùng chúng mình. <br/>
+        Mong được gặp bạn trong ngày đặc biệt sắp tới!
+      </p>
+      <div class="footer-names">
+        <span data-f="names.first">Tường Duy</span>
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 32s-12-7-12-17a6 6 0 0112-2 6 6 0 0112 2c0 10-12 17-12 17z"/></svg>
+        <span data-f="names.second">Như Ngọc</span>
+      </div>
+      <p class="footer-date" data-f="date.fullDotted">29 · 11 · 2026</p>
+
+      <p class="footer-credit">
+        <!-- Thiệp cưới điện tử · Thiết kế với 🤍 bởi đôi uyên ương -->
+      </p>
+    </div>
+  </footer>
+
+  <audio id="bgMusic" loop preload="auto">
+    <!-- Replace with your own audio file -->
+    <source src="assets/musics/v3.m4a" type="audio/mp4" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

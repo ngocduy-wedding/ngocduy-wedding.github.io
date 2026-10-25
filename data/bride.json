@@ -1,0 +1,51 @@
+{
+  "side": "bride",
+  "initialsHtml": "N <span class=\"amp\">&amp;</span> D",
+  "giftboxTag": "N & D",
+  "names": {
+    "first": "Như Ngọc",
+    "firstNbsp": "Như&nbsp;Ngọc",
+    "second": "Tường Duy",
+    "secondNbsp": "Tường&nbsp;Duy"
+  },
+  "pageTitle": "Ngọc & Duy | Wedding Invitation",
+  "siteName": "Ngọc & Duy — Wedding",
+  "ogTitle": "Như Ngọc & Tường Duy · 28.11.2026",
+  "ogImageAlt": "Thiệp cưới Như Ngọc & Tường Duy — 28 tháng 11, 2026",
+  "description": "Trân trọng kính mời thân bằng quyến thuộc đến chung vui trong ngày trọng đại của chúng mình.",
+  "date": {
+    "iso": "2026-11-28T11:30:00+07:00",
+    "day": "28",
+    "dayDotMonth": "28 · 11",
+    "fullDotted": "28 · 11 · 2026",
+    "monthShort": "Tháng 11",
+    "monthLong": "Tháng Mười Một",
+    "year": "2026",
+    "dayOfWeek": "Thứ Bảy",
+    "time": "11:30"
+  },
+  "venue": {
+    "tag": "Tiệc cưới",
+    "nameHtml": "Trung Tình 2<br/><em>Nhà Hàng Tiệc Cưới</em>",
+    "namePlain": "Nhà Hàng Tiệc Cưới Trung Tình 2",
+    "nameModifier": "restaurant-name--compact",
+    "addressHtml": "4J94+5M, Thới Hòa,<br/>TP. Hồ Chí Minh",
+    "addressPlain": "4J94+5M, Thới Hòa, TP. Hồ Chí Minh",
+    "mapsUrl": "https://maps.app.goo.gl/v99uzmHguivUsHkX8",
+    "mapEmbed": "https://maps.google.com/maps?q=NH%C3%80+H%C3%80NG+TI%E1%BB%86C+C%C6%AF%E1%BB%9AI+TRUNG+T%C3%8CNH+2&ll=11.1192325,106.6053936&z=17&hl=vi&output=embed",
+    "mapTitle": "Bản đồ Nhà Hàng Tiệc Cưới Trung Tình 2",
+    "mapAria": "Mở Google Maps đến Trung Tình 2"
+  },
+  "calendar": {
+    "title": "Tiệc cưới Như Ngọc ❤ Tường Duy",
+    "startUtc": "20261128T043000Z",
+    "endUtc":   "20261128T073000Z",
+    "details":  "Trân trọng kính mời quý khách đến chung vui trong ngày cưới của Như Ngọc & Tường Duy.",
+    "location": "Nhà Hàng Tiệc Cưới Trung Tình 2, Thới Hòa, TP. Hồ Chí Minh"
+  },
+  "schedule": [
+    { "time": "09:00", "event": "Lễ hôn phối", "note": "Giáo Xứ Thới Hòa" },
+    { "time": "10:30", "event": "Đón khách",   "note": "Chào mừng quý khách" },
+    { "time": "11:30", "event": "Khai tiệc",   "note": "Bắt đầu tiệc cưới" }
+  ]
+}
