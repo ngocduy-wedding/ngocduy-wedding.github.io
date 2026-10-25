@@ -2502,3 +2502,7 @@ section { position: relative; padding: 120px 0; }
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+.test {
+
+}
