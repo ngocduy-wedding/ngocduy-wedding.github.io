@@ -97,18 +97,18 @@ body.cover-locked { overflow: hidden; }
   position: absolute; inset: 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 18% 12%, rgba(192, 139, 106, 0.28), transparent 55%),
-    radial-gradient(ellipse at 82% 88%, rgba(107, 127, 92, 0.32), transparent 55%),
-    linear-gradient(135deg, #2b2620 0%, #3b3528 50%, #2b2620 100%);
+    radial-gradient(ellipse at 18% 12%, rgba(243, 227, 200, 0.7), transparent 55%),
+    radial-gradient(ellipse at 82% 88%, rgba(183, 195, 173, 0.6), transparent 55%),
+    linear-gradient(135deg, #f3ead9 0%, #e8ebd8 50%, #dfe6d8 100%);
   transition: opacity .9s var(--ease) .4s;
 }
 .cover-bg::after {
   content: "";
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(250, 246, 240, 0.07) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(74, 90, 63, 0.09) 1px, transparent 0);
   background-size: 32px 32px;
-  opacity: .7;
+  opacity: .6;
 }
 .cover.is-open .cover-bg { opacity: 0; }
 
@@ -116,39 +116,39 @@ body.cover-locked { overflow: hidden; }
 .cover-decor {
   position: absolute;
   width: clamp(220px, 32vw, 360px);
-  opacity: .18;
+  opacity: .28;
   pointer-events: none;
-  color: var(--sage-300);
+  color: var(--sage-900);
   animation: coverDecorIn 1.2s var(--ease) .4s both;
 }
 .cover-decor .ol-stem  { stroke: currentColor; stroke-width: 1.2; fill: none; }
 .cover-decor .ol-leaf  { fill: currentColor; }
-.cover-decor .ol-vein  { stroke: #2b2620; stroke-width: .5; fill: none; opacity: .35; }
-.cover-decor .ol-olive { fill: var(--rose); opacity: .9; }
+.cover-decor .ol-vein  { stroke: #faf6f0; stroke-width: .5; fill: none; opacity: .55; }
+.cover-decor .ol-olive { fill: var(--rose); opacity: .95; }
 .cover-decor-tl { top: -36px;    left: -56px;  transform: rotate(10deg); transform-origin: top left; }
 .cover-decor-tr { top: -36px;    right: -56px; transform: scaleX(-1) rotate(10deg); transform-origin: top right; }
 .cover-decor-bl { bottom: -36px; left: -56px;  transform: scaleY(-1) rotate(10deg); transform-origin: bottom left; }
 .cover-decor-br { bottom: -36px; right: -56px; transform: scale(-1, -1) rotate(10deg); transform-origin: bottom right; }
 @keyframes coverDecorIn {
   from { opacity: 0; }
-  to   { opacity: .18; }
+  to   { opacity: .28; }
 }
 
 /* Floral blossoms scattered in backdrop */
 .cover-blossom {
   position: absolute;
   width: 42px;
-  color: #f8dcd480;
+  color: #d4a0a0cc;
   opacity: 0;
   pointer-events: none;
   animation: coverBloomIn 1.2s var(--ease) both,
              coverBloomSway 9s ease-in-out infinite;
 }
-.cover-blossom-1 { top: 11%; left: 7%;  width: 44px; animation-delay: .55s, .55s; }
-.cover-blossom-2 { top: 70%; left: 11%; width: 32px; animation-delay: .75s, 2.4s; color: #dfe6d880; } /* pale sage */
-.cover-blossom-3 { top: 18%; right: 9%; width: 50px; animation-delay: .65s, 1.2s; color: #f3e3c880; } /* warm cream */
-.cover-blossom-4 { top: 74%; right: 7%; width: 36px; animation-delay: .85s, 3.1s; color: #e8d4de80; } /* dusty mauve */
-.cover-blossom-5 { top: 46%; left: 3%;  width: 26px; animation-delay: 1s, 1.8s;   color: #f8dcd480; } /* blush */
+.cover-blossom-1 { top: 11%; left: 7%;  width: 44px; animation-delay: .55s, .55s; color: #c99a9acc; } /* rose */
+.cover-blossom-2 { top: 70%; left: 11%; width: 32px; animation-delay: .75s, 2.4s; color: #9fb295b3; } /* sage */
+.cover-blossom-3 { top: 18%; right: 9%; width: 50px; animation-delay: .65s, 1.2s; color: #e0b683b3; } /* warm cream */
+.cover-blossom-4 { top: 74%; right: 7%; width: 36px; animation-delay: .85s, 3.1s; color: #cfa2b3b3; } /* dusty mauve */
+.cover-blossom-5 { top: 46%; left: 3%;  width: 26px; animation-delay: 1s, 1.8s;   color: #e0b1a5cc; } /* blush */
 @keyframes coverBloomIn {
   from { opacity: 0; transform: scale(.4) rotate(-30deg); }
   to   { opacity: 1; transform: scale(1) rotate(0deg); }
@@ -172,7 +172,7 @@ body.cover-locked { overflow: hidden; }
 .cover-hearts .ch {
   position: absolute;
   color: var(--rose);
-  opacity: .18;
+  opacity: .35;
   display: block;
   animation: coverFloat 9s ease-in-out infinite;
 }
@@ -181,10 +181,10 @@ body.cover-locked { overflow: hidden; }
 .cover-hearts .ch-2 { top: 72%; left: 14%; width: 14px; animation-delay: 1.2s; color: var(--terracotta); }
 .cover-hearts .ch-3 { top: 24%; right: 10%; width: 18px; animation-delay: 2.4s; }
 .cover-hearts .ch-4 { top: 78%; right: 16%; width: 24px; animation-delay: 0.6s; color: var(--terracotta); }
-.cover-hearts .ch-5 { top: 50%; left: 4%;  width: 12px; animation-delay: 3.1s; opacity: .12; }
+.cover-hearts .ch-5 { top: 50%; left: 4%;  width: 12px; animation-delay: 3.1s; opacity: .28; }
 @keyframes coverFloat {
-  0%, 100% { transform: translateY(0) rotate(-6deg); opacity: .18; }
-  50%      { transform: translateY(-18px) rotate(6deg); opacity: .3; }
+  0%, 100% { transform: translateY(0) rotate(-6deg); opacity: .35; }
+  50%      { transform: translateY(-18px) rotate(6deg); opacity: .55; }
 }
 .cover.is-open .cover-hearts .ch {
   animation: coverHeartFlyUp 1.1s var(--ease) both;
@@ -254,9 +254,9 @@ body.cover-locked { overflow: hidden; }
   border-radius: 10px;
   text-align: center;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    0 30px 80px rgba(0, 0, 0, 0.45),
-    0 10px 30px rgba(0, 0, 0, 0.25);
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 30px 80px rgba(74, 90, 63, 0.22),
+    0 10px 30px rgba(74, 90, 63, 0.14);
   animation: coverCardIn 1.1s var(--ease) both;
   animation-delay: .2s;
   transition:
@@ -267,7 +267,7 @@ body.cover-locked { overflow: hidden; }
 .cover.is-open .cover-card {
   opacity: 0;
   transform: translateY(-32px) scale(1.08) rotate(-1.6deg);
-  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 50px 120px rgba(74, 90, 63, 0.3);
 }
 .cover-card::before,
 .cover-card::after {
