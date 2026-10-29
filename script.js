@@ -676,83 +676,206 @@ function refreshCalendarHref() {
 }
 refreshCalendarHref();
 
-// ---------- Gallery carousel + lightbox ----------
+// ---------- Gallery: render slides from the carousel folder ----------
+// Edit this list when photos change in assets/images/gallery-carousel/
+const GALLERY_FILES = [
+  "1.DSC_7566.jpg",
+  "1.DSC_7567.jpg",
+  "1.DSC_7615.jpg",
+  "1.DSC_7619.jpg",
+  "1.DSC_7700.jpg",
+  "2.DSC_7311.jpg",
+  "2.DSC_7329.jpg",
+  "2.DSC_7339.jpg",
+  "2.DSC_7441.jpg",
+  "2.DSC_7458.jpg",
+  "2.DSC_7516.jpg",
+  "2.DSC_7527.jpg",
+  "3.DSC_8331.jpg",
+  "3.DSC_8343.jpg",
+  "4.DSC_7805.jpg",
+  "4.DSC_7912.jpg",
+];
+
 (() => {
+  const track = document.getElementById("galleryTrack");
+  if (!track) return;
+  track.innerHTML = GALLERY_FILES.map((file, i) => {
+    const src = `assets/images/gallery-carousel/${file}`;
+    return `
+      <div class="g-slide" data-full="${src}">
+        <img data-src="${src}" alt="Khoảnh khắc cưới ${i + 1}" draggable="false" />
+      </div>`;
+  }).join("");
+  initGalleryCarousel();
+})();
+
+// ---------- Gallery coverflow carousel + lightbox ----------
+function initGalleryCarousel() {
   const carousel = document.getElementById("galleryCarousel");
   if (!carousel) return;
   const track = document.getElementById("galleryTrack");
+  const stage = document.getElementById("gcStage") || carousel.querySelector(".gc-stage");
   const slides = Array.from(track.querySelectorAll(".g-slide"));
-  if (!slides.length) return;
+  const total = slides.length;
+  if (!total) return;
   const dotsWrap = document.getElementById("galleryDots");
+  if (dotsWrap) dotsWrap.innerHTML = "";
   const prevBtn = carousel.querySelector(".gc-prev");
   const nextBtn = carousel.querySelector(".gc-next");
   const lightbox = document.getElementById("galleryLightbox");
   const lbImg = document.getElementById("galleryLightboxImage");
   const lbCounter = document.getElementById("galleryLightboxCounter");
 
-  const total = slides.length;
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let index = 0;
+
+  // Shortest circular offset of slide j from active i (range -floor(n/2)..+floor(n/2))
+  const circularD = (j, i) => {
+    let d = j - i;
+    const half = total / 2;
+    if (d > half) d -= total;
+    else if (d < -half) d += total;
+    return d;
+  };
 
   const dots = slides.map((_, i) => {
     const b = document.createElement("button");
     b.type = "button";
-    b.setAttribute("aria-label", `Ảnh ${i + 1}`);
+    b.setAttribute("aria-label", `Go to photo ${i + 1}`);
     b.addEventListener("click", (e) => { e.stopPropagation(); go(i); });
     dotsWrap.appendChild(b);
     return b;
   });
 
-  function go(i) {
-    index = (i + total) % total;
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, j) => d.setAttribute("aria-current", j === index ? "true" : "false"));
+  function applyNaturalRatio(slide, img) {
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    slide.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
   }
 
-  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); go(index - 1); });
-  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); go(index + 1); });
+  function ensureLoaded(j) {
+    const slide = slides[j];
+    const img = slide.querySelector("img");
+    if (!img) return;
+    if (!img.src && img.dataset.src) {
+      img.addEventListener("load", () => applyNaturalRatio(slide, img), { once: true });
+      img.src = img.dataset.src;
+    } else if (img.complete) {
+      applyNaturalRatio(slide, img);
+    }
+  }
 
-  // Touch swipe
-  let touchX = null;
-  track.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
-  track.addEventListener("touchend", (e) => {
-    if (touchX == null) return;
-    const dx = e.changedTouches[0].clientX - touchX;
-    touchX = null;
-    if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+  function updateStyles() {
+    slides.forEach((slide, j) => {
+      const d = circularD(j, index);
+      const ad = Math.abs(d);
+      const scale = ad === 0 ? 1 : ad === 1 ? 0.85 : 0.7;
+      const opacity = ad === 0 ? 1 : ad === 1 ? 0.75 : ad === 2 ? 0.5 : 0.3;
+      slide.style.transform =
+        `translate(-50%, -50%) translateX(${60 * d}%) translateZ(${-150 * ad}px) rotateY(${45 * d}deg) scale(${scale})`;
+      slide.style.opacity = opacity;
+      slide.style.zIndex = 100 - ad;
+      slide.setAttribute("aria-hidden", d === 0 ? "false" : "true");
+    });
+    // Eager-load window: active and the two visible cards on each side
+    for (let k = -2; k <= 2; k++) ensureLoaded((index + k + total) % total);
+    dots.forEach((b, j) => b.setAttribute("aria-current", j === index ? "true" : "false"));
+  }
+
+  function go(i) {
+    index = ((i % total) + total) % total;
+    updateStyles();
+  }
+
+  prevBtn?.addEventListener("click", (e) => { e.stopPropagation(); go(index - 1); pauseAuto(); });
+  nextBtn?.addEventListener("click", (e) => { e.stopPropagation(); go(index + 1); pauseAuto(); });
+
+  // Clicking a side card activates it; clicking the active card opens the lightbox
+  slides.forEach((s, i) => {
+    s.addEventListener("click", () => {
+      const d = circularD(i, index);
+      if (d === 0) openLightbox(i);
+      else go(i);
+    });
   });
 
-  // Lightbox
-  const openLightbox = (i) => {
-    index = (i + total) % total;
+  // Keyboard navigation when the stage is focused
+  stage?.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); go(index + 1); }
+  });
+
+  // Touch swipe (horizontal > 40px; keep vertical scroll working)
+  let touchX = null, touchY = null, swiping = false;
+  stage?.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    touchX = t.clientX; touchY = t.clientY; swiping = false;
+    pauseAuto();
+  }, { passive: true });
+  stage?.addEventListener("touchmove", (e) => {
+    if (touchX == null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchX;
+    const dy = t.clientY - touchY;
+    if (!swiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) swiping = true;
+  }, { passive: true });
+  stage?.addEventListener("touchend", (e) => {
+    if (touchX == null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    const wasSwiping = swiping;
+    touchX = null; touchY = null; swiping = false;
+    if (wasSwiping && Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+  });
+
+  // Autoplay — paused on hover/touch, when tab is hidden, and under reduced-motion
+  const AUTOPLAY_MS = 4000;
+  let autoTimer = null;
+  let hovered = false;
+  const canAutoplay = !reduceMotion;
+  function startAuto() {
+    if (!canAutoplay || autoTimer || hovered || document.hidden || (lightbox && lightbox.open)) return;
+    autoTimer = setInterval(() => go(index + 1), AUTOPLAY_MS);
+  }
+  function pauseAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+  carousel.addEventListener("mouseenter", () => { hovered = true; pauseAuto(); });
+  carousel.addEventListener("mouseleave", () => { hovered = false; startAuto(); });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) pauseAuto();
+    else startAuto();
+  });
+
+  // Lightbox (reuse existing dialog)
+  function openLightbox(i) {
+    if (!lightbox) return;
+    index = ((i + total) % total);
     updateLightbox();
     if (typeof lightbox.showModal === "function") lightbox.showModal();
     else lightbox.setAttribute("open", "");
-  };
-  const closeLightbox = () => {
+    pauseAuto();
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
     if (typeof lightbox.close === "function") lightbox.close();
     else lightbox.removeAttribute("open");
-  };
-  const updateLightbox = () => {
+    startAuto();
+  }
+  function updateLightbox() {
+    if (!lightbox) return;
     const slide = slides[index];
     const img = slide.querySelector("img");
-    const src = slide.dataset.full || img.src;
+    const src = slide.dataset.full || img.dataset.src || img.src;
     lbImg.classList.add("is-loading");
     const next = new Image();
-    next.onload = () => {
-      lbImg.src = src;
-      lbImg.classList.remove("is-loading");
-    };
+    next.onload = () => { lbImg.src = src; lbImg.classList.remove("is-loading"); };
     next.src = src;
     lbImg.alt = img.alt || "";
-    lbCounter.textContent = `${index + 1} / ${total}`;
-    go(index);
-  };
+    if (lbCounter) lbCounter.textContent = `${index + 1} / ${total}`;
+    updateStyles();
+  }
 
-  slides.forEach((s, i) => {
-    s.addEventListener("click", () => openLightbox(i));
-  });
-
-  lightbox.addEventListener("click", (e) => {
+  lightbox?.addEventListener("click", (e) => {
     if (e.target.closest("[data-close]")) { closeLightbox(); return; }
     if (e.target.closest(".gl-next")) { index = (index + 1) % total; updateLightbox(); return; }
     if (e.target.closest(".gl-prev")) { index = (index - 1 + total) % total; updateLightbox(); return; }
@@ -761,13 +884,20 @@ refreshCalendarHref();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (!lightbox.open) return;
+    if (!lightbox?.open) return;
     if (e.key === "ArrowRight") { index = (index + 1) % total; updateLightbox(); }
     else if (e.key === "ArrowLeft") { index = (index - 1 + total) % total; updateLightbox(); }
   });
 
-  go(0);
-})();
+  // Kick off a background prefetch for everything else so dot jumps are instant.
+  // The browser caps parallel requests per host, so this won't flood the network.
+  const prefetchRest = () => { for (let j = 0; j < total; j++) ensureLoaded(j); };
+  if ("requestIdleCallback" in window) requestIdleCallback(prefetchRest, { timeout: 1000 });
+  else setTimeout(prefetchRest, 500);
+
+  updateStyles();
+  startAuto();
+}
 
 // ---------- Smooth scroll offset for fixed nav ----------
 document.querySelectorAll('a[href^="#"]').forEach((a) => {

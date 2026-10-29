@@ -1520,85 +1520,123 @@ section { position: relative; padding: 120px 0; }
   flex: 0 0 18px;
 }
 
-/* ------------------------- GALLERY ------------------------- */
+/* ------------------------- GALLERY (3D coverflow) ------------------------- */
 .gallery { background: var(--cream); }
-.gallery-carousel { position: relative; max-width: 1000px; margin: 0 auto; }
-.gallery-viewport {
+.gallery-carousel {
   position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--sage-100);
-  box-shadow: var(--shadow-md);
-  aspect-ratio: 3 / 2;
+  z-index: 10;
+  margin-top: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 380px;
+  color: var(--sage-700);
 }
-.gallery-track {
-  list-style: none;
-  margin: 0;
+.gc-stage {
+  position: relative;
   padding: 0;
-  display: flex;
+  height: 340px;
+  touch-action: pan-y;
+  outline: none;
+  overflow: hidden;
+}
+.gc-stage:focus-visible { box-shadow: 0 0 0 2px var(--sage-700); border-radius: 1rem; }
+.gc-track {
+  position: relative;
+  width: 100%;
   height: 100%;
-  transition: transform .65s var(--ease);
-  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
 }
 .g-slide {
-  flex: 0 0 100%;
-  height: 100%;
-  cursor: zoom-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 92%;
+  aspect-ratio: 2 / 3;
+  border-radius: 1rem;
   overflow: hidden;
+  cursor: pointer;
+  background: var(--sage-100);
+  box-shadow: 0 24px 60px rgba(74, 90, 63, 0.3);
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  transition: transform 1100ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 1100ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 .g-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform .6s var(--ease);
+  pointer-events: none;
+  user-select: none;
 }
-.g-slide:hover img { transform: scale(1.03); }
 
 .gc-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  display: grid;
+  width: 32px;
+  height: 32px;
+  display: none;
   place-items: center;
   border-radius: 50%;
-  color: var(--ink);
-  background: rgba(255, 255, 255, 0.9);
+  color: var(--sage-700);
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 6px 20px rgba(74, 90, 63, 0.18);
-  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
-  z-index: 2;
+  transition: background .2s ease, transform .2s ease;
+  z-index: 200;
+  transform: translateY(-50%);
 }
 .gc-arrow:hover {
   background: #fff;
   transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 10px 24px rgba(74, 90, 63, 0.24);
 }
 .gc-arrow:focus-visible { outline: 2px solid var(--sage-700); outline-offset: 3px; }
-.gc-arrow svg { width: 20px; height: 20px; }
-.gc-prev { left: 16px; }
-.gc-next { right: 16px; }
+.gc-arrow svg { width: 16px; height: 16px; }
+.gc-prev { left: 0; }
+.gc-next { right: 0; }
 
 .gallery-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--sage-700);
 }
 .gallery-dots button {
   width: 8px;
   height: 8px;
   padding: 0;
+  border: 0;
   border-radius: 999px;
-  background: var(--sage-300);
-  transition: background .25s ease, width .3s var(--ease);
+  background: currentColor;
+  opacity: 0.25;
+  cursor: pointer;
+  transition: all 300ms ease;
 }
+.gallery-dots button:hover { opacity: 0.4; }
 .gallery-dots button[aria-current="true"] {
-  background: var(--sage-700);
   width: 24px;
+  opacity: 0.7;
 }
-.gallery-dots button:focus-visible { outline: 2px solid var(--sage-700); outline-offset: 3px; }
+.gallery-dots button:focus-visible { outline: 2px solid var(--sage-700); outline-offset: 3px; opacity: 0.7; }
+
+@media (min-width: 768px) {
+  .gallery-carousel { max-width: 600px; }
+  .gc-stage { height: 520px; }
+  .gc-arrow { display: grid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-slide {
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
 
 /* ---------- Gallery lightbox (native <dialog>) ---------- */
 .gallery-lightbox {
@@ -2570,9 +2608,6 @@ section { position: relative; padding: 120px 0; }
   .timeline-item::after { left: 20px; }
   .timeline-media { aspect-ratio: 4/3; }
 
-  .gc-arrow { width: 38px; height: 38px; }
-  .gc-prev { left: 10px; }
-  .gc-next { right: 10px; }
   .gl-arrow { width: 42px; height: 42px; }
   .gl-prev { left: 10px; }
   .gl-next { right: 10px; }
