@@ -676,6 +676,99 @@ function refreshCalendarHref() {
 }
 refreshCalendarHref();
 
+// ---------- Gallery carousel + lightbox ----------
+(() => {
+  const carousel = document.getElementById("galleryCarousel");
+  if (!carousel) return;
+  const track = document.getElementById("galleryTrack");
+  const slides = Array.from(track.querySelectorAll(".g-slide"));
+  if (!slides.length) return;
+  const dotsWrap = document.getElementById("galleryDots");
+  const prevBtn = carousel.querySelector(".gc-prev");
+  const nextBtn = carousel.querySelector(".gc-next");
+  const lightbox = document.getElementById("galleryLightbox");
+  const lbImg = document.getElementById("galleryLightboxImage");
+  const lbCounter = document.getElementById("galleryLightboxCounter");
+
+  const total = slides.length;
+  let index = 0;
+
+  const dots = slides.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", `Ảnh ${i + 1}`);
+    b.addEventListener("click", (e) => { e.stopPropagation(); go(i); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function go(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, j) => d.setAttribute("aria-current", j === index ? "true" : "false"));
+  }
+
+  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); go(index - 1); });
+  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); go(index + 1); });
+
+  // Touch swipe
+  let touchX = null;
+  track.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", (e) => {
+    if (touchX == null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+  });
+
+  // Lightbox
+  const openLightbox = (i) => {
+    index = (i + total) % total;
+    updateLightbox();
+    if (typeof lightbox.showModal === "function") lightbox.showModal();
+    else lightbox.setAttribute("open", "");
+  };
+  const closeLightbox = () => {
+    if (typeof lightbox.close === "function") lightbox.close();
+    else lightbox.removeAttribute("open");
+  };
+  const updateLightbox = () => {
+    const slide = slides[index];
+    const img = slide.querySelector("img");
+    const src = slide.dataset.full || img.src;
+    lbImg.classList.add("is-loading");
+    const next = new Image();
+    next.onload = () => {
+      lbImg.src = src;
+      lbImg.classList.remove("is-loading");
+    };
+    next.src = src;
+    lbImg.alt = img.alt || "";
+    lbCounter.textContent = `${index + 1} / ${total}`;
+    go(index);
+  };
+
+  slides.forEach((s, i) => {
+    s.addEventListener("click", () => openLightbox(i));
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close]")) { closeLightbox(); return; }
+    if (e.target.closest(".gl-next")) { index = (index + 1) % total; updateLightbox(); return; }
+    if (e.target.closest(".gl-prev")) { index = (index - 1 + total) % total; updateLightbox(); return; }
+    if (e.target.closest(".gl-image, .gl-counter")) return;
+    closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.open) return;
+    if (e.key === "ArrowRight") { index = (index + 1) % total; updateLightbox(); }
+    else if (e.key === "ArrowLeft") { index = (index - 1 + total) % total; updateLightbox(); }
+  });
+
+  go(0);
+})();
+
 // ---------- Smooth scroll offset for fixed nav ----------
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {

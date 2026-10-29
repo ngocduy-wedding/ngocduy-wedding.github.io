@@ -309,14 +309,23 @@
         <div class="timeline-item reveal">
           <div class="timeline-media third"></div>
           <div class="timeline-text">
-            <span class="timeline-date">Mùa xuân · 2025</span>
-            <h3>Lời cầu hôn</h3>
-            <p>Và em đã nói "Đồng ý".</p>
+            <span class="timeline-date">Mùa hè · 2025</span>
+            <h3>Mùa hè năm ấy...</h3>
+            <p>Đưa nhau đến những bờ biển xanh biếc</p>
           </div>
         </div>
 
         <div class="timeline-item reverse reveal">
           <div class="timeline-media fourth"></div>
+          <div class="timeline-text">
+            <span class="timeline-date">Mùa thu · 2026</span>
+            <h3>Lời cầu hôn</h3>
+            <p>Và em đã nói "Đồng ý".</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-media fifth"></div>
           <div class="timeline-text">
             <span class="timeline-date">Mùa đông · 2026</span>
             <h3>Về chung một nhà</h3>
@@ -519,14 +528,61 @@
         </svg>
       </div>
 
-      <div class="gallery-grid">
-        <div class="g-item g1 reveal"></div>
-        <div class="g-item g2 reveal" style="--d:.05s"></div>
-        <div class="g-item g3 reveal" style="--d:.1s"></div>
-        <div class="g-item g4 reveal" style="--d:.15s"></div>
-        <div class="g-item g5 reveal" style="--d:.2s"></div>
-        <div class="g-item g6 reveal" style="--d:.25s"></div>
+      <div class="gallery-carousel reveal" id="galleryCarousel">
+        <div class="gallery-viewport">
+          <ul class="gallery-track" id="galleryTrack">
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1529636798458-92182e662485?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=1200&q=80" alt="Khoảnh khắc cưới 1" fetchpriority="high" />
+            </li>
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" alt="Khoảnh khắc cưới 2" loading="lazy" />
+            </li>
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80" alt="Khoảnh khắc cưới 3" loading="lazy" />
+            </li>
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80" alt="Khoảnh khắc cưới 4" loading="lazy" />
+            </li>
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&q=80" alt="Khoảnh khắc cưới 5" loading="lazy" />
+            </li>
+            <li class="g-slide" data-full="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1800&q=80">
+              <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&q=80" alt="Khoảnh khắc cưới 6" loading="lazy" />
+            </li>
+          </ul>
+          <button type="button" class="gc-arrow gc-prev" aria-label="Ảnh trước">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 6 9 12 15 18"/>
+            </svg>
+          </button>
+          <button type="button" class="gc-arrow gc-next" aria-label="Ảnh sau">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 6 15 12 9 18"/>
+            </svg>
+          </button>
+        </div>
+        <div class="gallery-dots" id="galleryDots" aria-label="Chọn ảnh"></div>
       </div>
+
+      <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Xem ảnh lớn">
+        <button type="button" class="gl-close" aria-label="Đóng" data-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+        <button type="button" class="gl-arrow gl-prev" aria-label="Ảnh trước">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 6 9 12 15 18"/>
+          </svg>
+        </button>
+        <img class="gl-image" id="galleryLightboxImage" alt="" />
+        <button type="button" class="gl-arrow gl-next" aria-label="Ảnh sau">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 6 15 12 9 18"/>
+          </svg>
+        </button>
+        <div class="gl-counter" id="galleryLightboxCounter"></div>
+      </dialog>
     </div>
   </section>
 
