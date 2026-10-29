@@ -684,7 +684,6 @@ const GALLERY_FILES = [
   "1.DSC_7615.jpg",
   "1.DSC_7619.jpg",
   "1.DSC_7700.jpg",
-  "2.DSC_7311.jpg",
   "2.DSC_7329.jpg",
   "2.DSC_7339.jpg",
   "2.DSC_7441.jpg",
