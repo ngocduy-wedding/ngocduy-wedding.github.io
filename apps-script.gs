@@ -10,7 +10,7 @@
  * ============================================================================
  * 1. Create a new Google Sheet. In the first tab (default name "Sheet1" is fine),
  *    put this header row in row 1:
- *       timestamp | name | phone | attend | wish | approved
+ *       timestamp | name | phone | attend | wish | side | approved
  *    Set the `approved` column to TRUE for wishes you want to show publicly.
  *    (New submissions default to TRUE — see APPROVE_BY_DEFAULT below.)
  *
@@ -77,6 +77,7 @@ function doPost(e) {
       String(payload.phone || "").slice(0, 40),
       String(payload.attend || "").slice(0, 10),
       String(payload.wish || "").slice(0, 2000),
+      String(payload.side || "").slice(0, 20),
       APPROVE_BY_DEFAULT,
     ]);
     return jsonOut({ ok: true });

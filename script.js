@@ -5,6 +5,7 @@
 // Dynamic config — overwritten by data/<side>.json after fetch. The initial
 // values are a safe fallback (groom's event) so the page still renders if the
 // JSON fails to load.
+let CURRENT_SIDE = "";
 let WEDDING_DATE = new Date("2026-11-29T18:00:00+07:00");
 let CALENDAR_EVENT = {
   title: "Tiệc cưới Tường Duy ❤ Như Ngọc",
@@ -128,7 +129,8 @@ let CALENDAR_EVENT = {
   fetch("side.txt", { cache: "no-cache" })
     .then((r) => r.ok ? r.text() : Promise.reject(new Error(`side.txt HTTP ${r.status}`)))
     .then((text) => {
-      const side = text.trim().toLowerCase().startsWith("b") ? "bride" : "groom";
+      CURRENT_SIDE = text.trim();
+      const side = CURRENT_SIDE.toLowerCase().startsWith("b") ? "bride" : "groom";
       return fetch(`data/${side}.json`, { cache: "no-cache" });
     })
     .then((r) => r.ok ? r.json() : Promise.reject(new Error(`JSON HTTP ${r.status}`)))
@@ -575,6 +577,7 @@ async function submitRsvp(payload) {
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form).entries());
+  data.side = CURRENT_SIDE;
   const wishText = (data.wish || "").trim();
 
   if (submitBtn) submitBtn.disabled = true;
