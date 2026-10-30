@@ -29,8 +29,8 @@
     "nameHtml": "Trung Tình 2<br/><em>Nhà Hàng Tiệc Cưới</em>",
     "namePlain": "Nhà Hàng Tiệc Cưới Trung Tình 2",
     "nameModifier": "restaurant-name--compact",
-    "addressHtml": "4J94+5M, Thới Hòa,<br/>TP. Hồ Chí Minh",
-    "addressPlain": "4J94+5M, Thới Hòa, TP. Hồ Chí Minh",
+    "addressHtml": "4J94+5M, Thới Hòa,<br/>TP. Hồ Chí Minh (Bình Dương cũ)",
+    "addressPlain": "4J94+5M, Thới Hòa, TP. Hồ Chí Minh (Bình Dương cũ)",
     "mapsUrl": "https://maps.app.goo.gl/v99uzmHguivUsHkX8",
     "mapEmbed": "https://maps.google.com/maps?q=NH%C3%80+H%C3%80NG+TI%E1%BB%86C+C%C6%AF%E1%BB%9AI+TRUNG+T%C3%8CNH+2&ll=11.1192325,106.6053936&z=17&hl=vi&output=embed",
     "mapTitle": "Bản đồ Nhà Hàng Tiệc Cưới Trung Tình 2",
@@ -41,7 +41,7 @@
     "startUtc": "20261128T043000Z",
     "endUtc":   "20261128T073000Z",
     "details":  "Trân trọng kính mời quý khách đến chung vui trong ngày cưới của Như Ngọc & Tường Duy.",
-    "location": "Nhà Hàng Tiệc Cưới Trung Tình 2, Thới Hòa, TP. Hồ Chí Minh"
+    "location": "Nhà Hàng Tiệc Cưới Trung Tình 2, Thới Hòa, TP. Hồ Chí Minh (Bình Dương cũ)"
   },
   "schedule": [
     { "time": "09:00", "event": "Lễ hôn phối", "note": "Giáo Xứ Thới Hòa" },
