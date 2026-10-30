@@ -363,7 +363,7 @@ document.querySelectorAll(".copyable").forEach((el) => {
 
 // ---------- Wishes (Google Apps Script + Google Sheet) ----------
 // Paste your deployed Apps Script Web App URL here. See apps-script.gs for setup.
-const WISHES_ENDPOINT = "https://script.google.com/macros/s/AKfycbzTBDfmKz8q36pMvPggvP3XEu6Q2YDWbpicOqrIx_2XUoevIGqJ-C-_ajJ04RE-mWh1WQ/exec";
+const WISHES_ENDPOINT = "https://script.google.com/macros/s/AKfycbwiKJjrmpSyf5q8bBfU6c8iPmxD_jJ_XR1bN3rbywRxXJtYoxqxg6aInR9P1OnW04NuHQ/exec";
 const WISHES_PAGE_SIZE = 6;
 
 const wishesWall = document.getElementById("wishesWall");
